@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props); 
+    
+    this.state = {
+      backgroundColor: 0xFFC0CB, 
+    };
+
+    this.randomColor = this.randomColor.bind(this);
+  }
+
+
+  randomColor() {
+    return '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+  }
+
+  changeColor() {
+    this.setState({backgroundColor: this.randomColor});
+  }
+
+  render() {     
+
+    return (
+        <div className="Container">
+        
+        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.state.backgroundColor}}></div>
+        <div className="Square" onMouseOver="changeColor"></div>
+        <div className="Square" onMouseOver="changeColor"></div>
+        <div className="Square" onMouseOver="changeColor"></div>
+        <div className="Square" onMouseOver="changeColor"></div>
+        <div className="Square" onMouseOver="changeColor"></div>
+        <div className="Square" onMouseOver="changeColor"></div>
+        <div className="Square" onMouseOver="changeColor"></div>
+        <div className="Square" onMouseOver="changeColor"></div>
+        
+        </div>
+    );
+  }
 }
+
+
 
 export default App;
