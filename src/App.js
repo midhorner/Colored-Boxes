@@ -6,10 +6,10 @@ class App extends React.Component {
     super(props); 
     
     this.state = {
-      backgroundColor: 0xFFC0CB, 
+      backgroundColor: 0xFFC0CB     
     };
 
-    this.randomColor = this.randomColor.bind(this);
+    this.changeColor = this.changeColor.bind(this);
   }
 
 
@@ -18,23 +18,24 @@ class App extends React.Component {
   }
 
   changeColor() {
-    this.setState({backgroundColor: this.randomColor});
+    this.setState({backgroundColor: 0xFFC0CB});
   }
 
-  render() {     
+  render() {
+    
 
     return (
         <div className="Container">
         
-        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.state.backgroundColor}}></div>
-        <div className="Square" onMouseOver="changeColor"></div>
-        <div className="Square" onMouseOver="changeColor"></div>
-        <div className="Square" onMouseOver="changeColor"></div>
-        <div className="Square" onMouseOver="changeColor"></div>
-        <div className="Square" onMouseOver="changeColor"></div>
-        <div className="Square" onMouseOver="changeColor"></div>
-        <div className="Square" onMouseOver="changeColor"></div>
-        <div className="Square" onMouseOver="changeColor"></div>
+        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
+        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
+        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
+        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
+        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
+        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
+        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
+        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
+        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
         
         </div>
     );

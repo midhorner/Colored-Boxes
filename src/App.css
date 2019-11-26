@@ -1,15 +1,15 @@
 .Container {
-  width: 100vw;
-  height: 100vh;
+  width: 310px;
   display: flex;
   flex-wrap: wrap;
+  margin: auto;
 }
 
 .Square {
-  display: block;
+  display: inline-block;
   background: pink;  
-  height: 31%;  
-  width: 31%;
+  height: 100px;  
+  width: 100px;
   font: 0px;
 }
 
