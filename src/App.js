@@ -4,13 +4,15 @@ import ColorBlock from './coloredboxes';
 
 function App() {
   let blocks = [];
-  for(let i = 0; i < 100; i++) {
+  for(let i = 0; i < 24; i++) {
     blocks.push(<ColorBlock key={i} />);
   }
 
   return (
-    <div className="App">
+    <div className="header"> RANDOM COLORED BLOCKS
+    <div className="App">      
       {blocks}
+      </div>
     </div>
   );
 }
