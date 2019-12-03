@@ -1,15 +1,3 @@
-.Container {
-  width: 310px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
+.App {
+  font-size: 0;
 }
-
-.Square {
-  display: inline-block;
-  background: pink;  
-  height: 100px;  
-  width: 100px;
-  font: 0px;
-}
-

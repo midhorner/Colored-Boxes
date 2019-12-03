@@ -1,47 +1,18 @@
 import React from 'react';
 import './App.css';
+import ColorBlock from './coloredboxes';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props); 
-    
-    this.state = {
-      backgroundColor: 0xFFC0CB     
-    };
-
-    this.changeColor = this.changeColor.bind(this);
+function App() {
+  let blocks = [];
+  for(let i = 0; i < 100; i++) {
+    blocks.push(<ColorBlock key={i} />);
   }
 
-
-  randomColor() {
-    return '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-  }
-
-  changeColor() {
-    this.setState({backgroundColor: 0xFFC0CB});
-  }
-
-  render() {
-    
-
-    return (
-        <div className="Container">
-        
-        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
-        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
-        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
-        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
-        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
-        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
-        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
-        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
-        <div className="Square" onMouseOver={this.changeColor} style={{backgroundColor: this.randomColor()}}></div>
-        
-        </div>
-    );
-  }
+  return (
+    <div className="App">
+      {blocks}
+    </div>
+  );
 }
-
-
 
 export default App;
